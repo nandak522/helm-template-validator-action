@@ -1,0 +1,10 @@
+name: Validate Helm Templates
+on: push
+jobs:
+  helm-validate:
+    runs-on: ubuntu-18.04
+    steps:
+      - continue-on-error: false
+      - uses: action/checkout@v2
+      - name: helm-validate
+        uses: nanda/helm-template-validator@v0.1.0
